@@ -1,0 +1,233 @@
+/*Estilos gerais*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:  border-box;
+ }
+ /*Barra de navegação*/
+ .navbar{
+     display: flex;
+     align-items: center;
+     padding: 10px;
+ }
+ nav{
+     flex: 1;
+     text-align: right;
+ }
+ nav ul{
+     display: inline-block;
+     list-style-type: none;
+ }
+ nav ul li{
+     display: inline-block;
+     margin-right: 10px;
+ }
+ a{
+    text-decoration: none;
+    color: #555; 
+ }
+ p{
+     color: #555;
+ }
+ /*Container principal*/
+ .container{
+     max-width: 1300px;
+     margin: auto;
+     padding-left: 45px;
+     padding-right: 25px;
+ }
+ .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+ }
+ .col-2{
+     flex-basis: 50%;
+     min-width: 300px;
+ }
+ .col-2 img{
+     max-width: 100;
+     padding: 50px 0;
+ }
+ .col-2 h1{
+    font-size: 50px;
+    line-height: 60px;
+    margin: 25px 0;
+ }
+ /*Carrossel*/
+ .container-slide{
+    display: flex;
+     justify-content: space-between;
+     align-items: center;
+     width: 50vw;
+     height: 50vh;
+     background-color: black;
+     margin: 20vh auto;
+     border-radius: 10px;
+     box-shadow: 0 20px 30px black;
+     border: 1px solid black;
+ }
+ .container-items {
+     position: absolute;
+     display: flex;
+     width: 50vw;
+     height: 50vh;
+     border-radius: 10px;
+     overflow: hidden;
+ }
+ .item {
+     width: 50vw;
+     height: 50vh;
+     transition: all 1s;
+ }
+ .item:first-child{
+     margin-left: -100%;
+ }
+ 
+ .item img {
+     width: 50vw;
+     height: 50vh;
+     border-radius: 10px;
+ }
+ 
+ .action-button{
+     font: bold 30px sans-serif;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 50px;
+     color: #00000000;
+     user-select: none;
+     z-index: 1;
+ }
+ .action-button:hover{
+     color: white;
+     background-color: #00000055;
+     border-radius: 10px;
+     cursor: pointer;
+     transition: all 1s;
+ } 
+/*Fim carrossel*/
+
+.header{
+    background: radial-gradient(#fff,#8c8787);
+    padding: 1px;
+ }
+.header .row{
+    margin-top: 70px;
+}
+.categoria{
+    margin: 70px 0;
+}
+.col-3{
+    flex-basis: 30%;
+    min-width: 250px;
+    margin-bottom: 30px;
+}
+.col-3 img{
+    width: 100%;
+}
+/*Estilização dos produtos*/
+
+.col-4{
+  flex-basis: 25%;
+  padding: 10px;
+  min-width: 200px;
+  margin-bottom: 50px;
+  transition: transform 0,5;
+}
+.col-4 img{
+  width: 100%;
+}
+.title{
+  text-align: center;
+  margin: 0 auto 80px;
+  position: relative;
+  line-height: 60px;
+  color: #555;
+}
+.title::after{
+  content: '';
+  background: #518fed;
+  width: 80px;
+  height: 5px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+h4{
+  color: #555;
+  font-weight: normal;
+}
+.col-4 p{
+  font-size: 14px;
+}
+.col-4:hover{
+  transform: translateY(-5px);
+}
+.offer{
+  background: radial-gradient(#fff,#8c8787);
+  margin-top: 80px;
+  padding: 30px 0;
+}
+.col-2 .offer-img{
+  padding: 50px;
+}
+small{
+  color: #555;
+}
+
+.dark-mode {
+  background-color: #333;
+  
+  /* Outros estilos para o Modo Escuro na barra de navegação */
+}
+/* Estilos específicos para ícone de carrinho no tema escuro */
+.dark-mode i.bx-shopping-bag {
+  color: #000; /* Defina a cor desejada para o ícone de carrinho no modo escuro */
+}
+
+/* Estilos específicos para ícone de "Modo Escuro" no tema escuro */
+.dark-mode i.bx-moon {
+  color: #ffdb58; /* Defina a cor desejada para o ícone de "Modo Escuro" no modo escuro */
+}
+.dark-mode i.cart-icon-product {
+ color: #1d71f0;
+    
+  }
+
+  .container-produtos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .container-produto{
+    align-items: center;
+    display: flex;
+  }
+
+  /* Estilos para os ícones das redes sociais */
+.social-icons {
+  margin-top: 20px; /* Espaçamento superior entre os ícones e o conteúdo anterior */
+}
+
+.instagram-icon {
+  color: #e4405f; /* Cor para o ícone do Instagram */
+}
+
+.facebook-icon {
+  color: #1877f2; /* Cor para o ícone do Facebook */
+}
+
+.youtube-icon {
+  color: #ff0000; /* Cor para o ícone do YouTube */
+}
+
+
+
+ 

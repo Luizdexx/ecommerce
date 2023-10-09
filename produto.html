@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="produto.css">
+    <title>Produtos</title>
+
+    <!-- Ícones do box -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <!-- CABEÇALHO -->
+    <header>
+        <!-- NAVEGAÇÃO -->
+        <div class="nav container">
+            <a href="#" class="logo"><span>Hora</span>Certa</a>
+            <!-- Ícone do Carrinho -->
+            <i class='bx bx-shopping-bag' id="cart-icon"></i>
+            
+            <i class="bx bx-moon" id="dark-mode-toggle"></i>
+             <a href="index.html" class="btn-voltar">Home</a>
+            <!-- Carrinho -->
+            <div class="cart">
+                <h2 class="cart-title">Seu carrinho</h2>
+
+                <!-- Conteúdo do Carrinho -->
+                <div class="cart-content">
+                    
+
+
+                </div>
+
+                <!-- TOTAL -->
+                <div class="total">
+                    <div class="total-title">Total</div>
+                    <div class="total-price">R$0</div>
+                </div>
+                <!-- Botão Comprar -->
+                <button type="button" class="btn-buy">Compre agora</button>
+                <!-- Fechar Carrinho -->
+                <i class='bx bx-x' id="cart-close"></i>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Seção da Loja -->
+    <section class="shop container">
+        <h2 class="section-title">Produtos da Loja</h2>
+
+       <!-- Conteúdo -->
+      <div class="shop-content">
+        <!-- Caixa 1 -->
+        <div class="product-box">
+            <img src="img/1.png" alt="" product-img>
+            <h2 class="product-title">Seiko Militar</h2>
+            <span class="product-price">R$1299</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+            <i class="bx bxs-heart"></i>
+            <i class='bx bx-shopping-bag cart-icon-product add-cart'></i>
+        </div>
+         <!-- Caixa 2 -->
+         <div class="product-box">
+            <img src="img/7.png" alt="" product-img>
+            <h2 class="product-title">Seiko automático</h2>
+            <span class="product-price">R$984</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+            <i class="bx bxs-heart"></i>
+            <i class='bx bx-shopping-bag cart-icon-product add-cart'></i>
+        </div>
+         <!-- Caixa 3 -->
+         <div class="product-box">
+            <img src="img/5.png" alt="" product-img>
+            <h2 class="product-title">Orient star prata</h2>
+            <span class="product-price">R$13263</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+            <i class="bx bxs-heart"></i>
+            <i class='bx bx-shopping-bag cart-icon-product add-cart'></i>
+        </div>
+         <!-- Caixa 4 -->
+         <div class="product-box">
+            <img src="img/2.png" alt="" product-img>
+            <h2 class="product-title">Casio F-91</h2>
+            <span class="product-price">R$180</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+            <i class="bx bxs-heart"></i>
+            <i class='bx bx-shopping-bag cart-icon-product add-cart'></i>
+        </div>
+         <!-- Caixa 5 -->
+         <div class="product-box">
+            <img src="img/8.png" alt="" product-img>
+            <h2 class="product-title">Casio prata</h2>
+            <span class="product-price">R$199</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+            <i class="bx bxs-heart"></i>
+            <i class='bx bx-shopping-bag cart-icon-product add-cart'></i>
+        </div>
+         <!-- Caixa 6 -->
+         <div class="product-box">
+            <img src="img/3.png" alt="" product-img>
+            <h2 class="product-title">Orient dourado</h2>
+            <span class="product-price">R$799</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+            <i class="bx bxs-heart"></i>
+            <i class='bx bx-shopping-bag cart-icon-product add-cart'></i>
+        </div>
+         <!-- Caixa 7 -->
+         <div class="product-box">
+            <img src="img/6.png" alt="" product-img>
+            <h2 class="product-title">Orient Neo</h2>
+            <span class="product-price">R$984</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+            <i class="bx bxs-heart"></i>
+            <i class='bx bx-shopping-bag cart-icon-product add-cart'></i>
+        </div>
+         <!-- Caixa 8 -->
+         <div class="product-box">
+            <img src="img/9.png" alt="" product-img>
+            <h2 class="product-title">Casio calculadora</h2>
+            <span class="product-price">R$321</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+            <i class="bx bxs-heart"></i>
+            <i class='bx bx-shopping-bag cart-icon-product add-cart'></i>
+        </div>
+        </div>
+    </section>
+
+    <!-- Link para JavaScript -->
+    <script src="produtos.js"></script>
+    <script>
+       // Array para armazenar os produtos no carrinho
+const carrinho = [];
+
+// Função para adicionar um produto ao carrinho ou atualizar a quantidade
+function adicionarProdutoAoCarrinho(titulo, preco) {
+    const produtoExistente = carrinho.find((produto) => produto.titulo === titulo);
+
+    if (produtoExistente) {
+        // Se o produto já existe no carrinho, atualize a quantidade
+        produtoExistente.quantidade++;
+    } else {
+        // Se o produto não existe no carrinho, adicione-o
+        const novoProduto = { titulo, preco, quantidade: 1 };
+        carrinho.push(novoProduto);
+    }
+
+    atualizarCarrinho();
+}
+
+// Função para atualizar o conteúdo do carrinho
+function atualizarCarrinho() {
+    // Limpar o conteúdo do carrinho atual
+    const carrinhoElement = document.querySelector(".cart-content");
+    carrinhoElement.innerHTML = "";
+
+    // Adicionar os produtos ao carrinho no HTML
+    carrinho.forEach((produto) => {
+        const produtoHTML = `
+            <div class="cart-box">
+                <div class="cart-product-title">${produto.titulo}</div>
+                <div class="cart-price">${produto.preco}</div>
+                <input type="number" value="${produto.quantidade}" class="cart-quantity">
+                <!-- Botão para remover o produto do carrinho -->
+                <i class='bx bxs-trash-alt cart-remove'></i>
+            </div>
+        `;
+        carrinhoElement.innerHTML += produtoHTML;
+    });
+
+    // Chamar a função para atualizar o total do carrinho
+    atualizarTotal();
+}
+
+// Event listener para adicionar produtos ao carrinho
+const addCartButtons = document.querySelectorAll(".add-cart");
+addCartButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        const productBox = button.parentElement;
+        const title = productBox.querySelector(".product-title").textContent;
+        const price = productBox.querySelector(".product-price").textContent;
+        adicionarProdutoAoCarrinho(title, price);
+    });
+});
+
+// Função para atualizar o total do carrinho
+function atualizarTotal() {
+    let total = 0;
+    carrinho.forEach((produto) => {
+        const precoNumerico = parseFloat(produto.preco.replace("R$", "").trim());
+        total += precoNumerico * produto.quantidade;
+    });
+
+    // Exibir o total no formato "R$ XX.XX"
+    const elementoTotal = document.querySelector(".total-price");
+    elementoTotal.textContent = `R$ ${total.toFixed(2)}`;
+}
+
+// Event listener para remover produtos do carrinho
+const removeButtons = document.querySelectorAll(".cart-remove");
+removeButtons.forEach((button) => {
+    button.addEventListener("click", handle_removerItemDoCarrinho);
+});
+
+function handle_removerItemDoCarrinho() {
+    const productTitle = this.parentElement.querySelector(".cart-product-title").textContent;
+
+    // Remover o item do carrinho
+    const index = carrinho.findIndex((produto) => produto.titulo === productTitle);
+    if (index !== -1) {
+        carrinho.splice(index, 1);
+        atualizarCarrinho();
+    }
+}
+
+// Event listener para comprar pedido
+const buyButton = document.querySelector(".btn-buy");
+buyButton.addEventListener("click", handle_comprarPedido);
+
+function handle_comprarPedido() {
+    if (carrinho.length === 0) {
+        alert("Ainda não há produtos no carrinho. Adicione produtos antes de comprar.");
+        return;
+    }
+
+    // Limpar o carrinho
+    carrinho.length = 0;
+    atualizarCarrinho();
+
+    alert("Seu pedido foi realizado com sucesso :)");
+}
+
+</script>
+</body>
+
+</html>
